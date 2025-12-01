@@ -35,12 +35,6 @@ const permanentUnlocks = ["Scheduling", "Shop", "Automation", "Quick task displa
 const jobBaseData = {
     "Beggar": {name: "Squire", maxXp: 100, income: 5},
     "Street Peddler": {name: "Street Peddler", maxXp: 1000, income: 50},
-    "wip Veteran footman": {name: "Veteran footman", maxXp: 10000, income: 120},
-    "wip Knight": {name: "Knight", maxXp: 100000, income: 300},
-    "wip Veteran knight": {name: "Veteran knight", maxXp: 1000000, income: 1000},
-    "wip Elite knight": {name: "Elite knight", maxXp: 7500000, income: 3000},
-    "wip Holy knight": {name: "Holy knight", maxXp: 40000000, income: 15000},
-    "wip Legendary knight": {name: "Legendary knight", maxXp: 150000000, income: 50000},
 
     "Squire": {name: "Squire", maxXp: 100, income: 5},
     "Footman": {name: "Footman", maxXp: 1000, income: 50},
@@ -825,6 +819,7 @@ function getTaskElement(taskName) {
 }
 
 function getItemElement(itemName) {
+    console.log(`getItemElement(${itemName})`)
     var item = gameData.itemData[itemName]
     var element = document.getElementById(item.id)
     return element
@@ -1155,3 +1150,4 @@ setInterval(update, 1000 / updateSpeed)
 setInterval(saveGameData, 3000)
 
 setInterval(setSkillWithLowestMaxXp, 1000)
+
