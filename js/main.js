@@ -813,6 +813,7 @@ function formatCoins(coins, element) {
 }
 
 function getTaskElement(taskName) {
+    console.log(`getItemElement(${taskName})`)
     var task = gameData.taskData[taskName]
     var element = document.getElementById(task.id)
     return element
@@ -1150,4 +1151,5 @@ setInterval(update, 1000 / updateSpeed)
 setInterval(saveGameData, 3000)
 
 setInterval(setSkillWithLowestMaxXp, 1000)
+
 
