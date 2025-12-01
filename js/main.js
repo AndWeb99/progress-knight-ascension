@@ -33,12 +33,14 @@ const baseGameSpeed = 4
 const permanentUnlocks = ["Scheduling", "Shop", "Automation", "Quick task display"]
 
 const jobBaseData = {
-    "Beggar": {name: "Beggar", maxXp: 50, income: 5},
-    "Farmer": {name: "Farmer", maxXp: 100, income: 9},
-    "Fisherman": {name: "Fisherman", maxXp: 200, income: 15},
-    "Miner": {name: "Miner", maxXp: 400, income: 40},
-    "Blacksmith": {name: "Blacksmith", maxXp: 800, income: 80},
-    "Merchant": {name: "Merchant", maxXp: 1600, income: 150},
+    "Beggar": {name: "Squire", maxXp: 100, income: 5},
+    "Street Peddler": {name: "Street Peddler", maxXp: 1000, income: 50},
+    "wip Veteran footman": {name: "Veteran footman", maxXp: 10000, income: 120},
+    "wip Knight": {name: "Knight", maxXp: 100000, income: 300},
+    "wip Veteran knight": {name: "Veteran knight", maxXp: 1000000, income: 1000},
+    "wip Elite knight": {name: "Elite knight", maxXp: 7500000, income: 3000},
+    "wip Holy knight": {name: "Holy knight", maxXp: 40000000, income: 15000},
+    "wip Legendary knight": {name: "Legendary knight", maxXp: 150000000, income: 50000},
 
     "Squire": {name: "Squire", maxXp: 100, income: 5},
     "Footman": {name: "Footman", maxXp: 1000, income: 50},
@@ -102,7 +104,7 @@ const itemBaseData = {
 }
 
 const jobCategories = {
-    "Common work": ["Beggar", "Farmer", "Fisherman", "Miner", "Blacksmith", "Merchant"],
+    "Common work": ["Beggar", "Street Peddler"],
     "Military" : ["Squire", "Footman", "Veteran footman", "Knight", "Veteran knight", "Elite knight", "Holy knight", "Legendary knight"],
     "The Arcane Association" : ["Student", "Apprentice mage", "Mage", "Wizard", "Master wizard", "Chairman"]
 }
@@ -133,11 +135,7 @@ const headerRowColors = {
 
 const tooltips = {
     "Beggar": "Struggle day and night for a couple of copper coins. It feels like you are at the brink of death each day.",
-    "Farmer": "Plow the fields and grow the crops. It's not much but it's honest work.",
-    "Fisherman": "Reel in various fish and sell them for a handful of coins. A relaxing but still a poor paying job.",
-    "Miner": "Delve into dangerous caverns and mine valuable ores. The pay is quite meager compared to the risk involved.",
-    "Blacksmith": "Smelt ores and carefully forge weapons for the military. A respectable and OK paying commoner job.",
-    "Merchant": "Travel from town to town, bartering fine goods. The job pays decently well and is a lot less manually-intensive.",
+    "Street Peddler": "Scavenge scraps and shout your wares for a miserable coin.",
 
     "Squire": "Carry around your knight's shield and sword along the battlefield. Very meager pay but the work experience is quite valuable.",
     "Footman": "Put down your life to battle with enemy soldiers. A courageous, respectable job but you are still worthless in the grand scheme of things.",
@@ -1155,4 +1153,5 @@ setTab(jobTabButton, "jobs")
 update()
 setInterval(update, 1000 / updateSpeed)
 setInterval(saveGameData, 3000)
+
 setInterval(setSkillWithLowestMaxXp, 1000)
